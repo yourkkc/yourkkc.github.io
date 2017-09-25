@@ -2,9 +2,42 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>我向你夸下海口</title>
+<link rel="stylesheet" href="layui/css/layui.css"  media="all">
+<script src="layui/layui.js"></script>
+<script src="layui/html5.min.js"></script>
+<script src="layui/respond.min.js"></script>
+<object height="0px" width="0px" data="haikou.mp3" ></object>
 </head>
 <body>
-测试一下
+
+<div class="layui-carousel" id="test1">
+  <div carousel-item>
+   <img alt="" src="img/1.jpg">
+    <img alt="" src="img/2.jpg">
+   <img alt="" src="img/3.jpg">
+   <img alt="" src="img/4.jpg">
+  
+  </div>
+</div>
+<!-- 条目中可以是任意内容，如：<img src=""> -->
+<script>
+layui.use('carousel', function(){
+  var carousel = layui.carousel;
+  //建造实例
+  carousel.render({
+    elem: '#test1'
+    ,width: '100%' //设置容器宽度
+    ,arrow: 'hover' //始终显示箭头
+    ,full:true
+    ,autoplay:true
+    ,interval:2000
+    //,anim: 'updown' //切换动画方式
+  });
+});
+</script>
+
+
+
 </body>
 </html>
