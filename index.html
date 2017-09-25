@@ -11,17 +11,36 @@
 </head>
 <body>
 
-<div class="layui-carousel" id="test1">
-  <div carousel-item>
+<div class="layui-carousel" id="test1" >
+  <div carousel-item style="cursor: pointer;">
    <img alt="" src="img/1.jpg">
     <img alt="" src="img/2.jpg">
    <img alt="" src="img/3.jpg">
    <img alt="" src="img/4.jpg">
-  
   </div>
 </div>
 <!-- 条目中可以是任意内容，如：<img src=""> -->
 <script>
+layui.use(['jquery', 'layer'], function(){ 
+	  var $ = layui.$ //重点处
+	  ,layer = layui.layer;
+	  
+	  //后面就跟你平时使用jQuery一样
+	  $('#test1').click(function(){
+		  window.open("flower.html");
+	  });
+	});
+	 
+	//如果内置的模块本身是依赖jquery，你无需去use jquery，所以上面的写法其实可以是：
+	layui.use('layer', function(){ 
+	  var $ = layui.$ //由于layer弹层依赖jQuery，所以可以直接得到
+	  ,layer = layui.layer;
+	 
+	  //……
+	});
+	
+
+
 layui.use('carousel', function(){
   var carousel = layui.carousel;
   //建造实例
