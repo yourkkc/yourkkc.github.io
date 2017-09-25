@@ -7,7 +7,7 @@ baseurl: 'http://yourkkc.top/'
 
 # Navigation links
 nav:
-  home: '/'
+  home: '/index.html'
   tags: '/tags.html'
 
 # Author 配置博主信息
