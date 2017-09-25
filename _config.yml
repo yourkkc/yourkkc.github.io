@@ -1,4 +1,4 @@
-name: White Paper
+name: 我是小小草
 description: >
     小小草的blog！！呦呦呦
 about: >
@@ -17,12 +17,12 @@ logo:             logo.png
 disqus_shortname:
 
 owner:
-  name:           whitepaper
+  name:           小小草
   avatar:         ""
-  email:          ""
+  email:          "1078298916@qq.com"
   # Social networking links used in footer. Update and remove as you like.
   twitter:
-  github:
+  github:yourkkc
   stackexchange:
   # For Google Authorship https://plus.google.com/authorship
   google_plus:
