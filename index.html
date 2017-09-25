@@ -9,15 +9,17 @@
 <script src="layui/respond.min.js"></script>
 <object height="0px" width="0px" data="haikou.webm" ></object>
 </head>
-<body>
-
+<body background="img/bg.jpeg" style="background-size:cover">
+<div class="layui-main" align="center" style="margin-top: 10%">
 <div class="layui-carousel" id="test1" >
   <div carousel-item style="cursor: pointer;">
-   <img alt="" src="img/1.jpg">
-    <img alt="" src="img/2.jpg">
-   <img alt="" src="img/3.jpg">
-   <img alt="" src="img/4.jpg">
+   <img class="imgclick" alt="" src="img/1.jpg">
+    <img class="imgclick" alt="" src="img/2.jpg">
+   <img class="imgclick" alt="" src="img/3.jpg">
+   <img class="imgclick" alt="" src="img/4.jpg">
   </div>
+</div>
+
 </div>
 <!-- 条目中可以是任意内容，如：<img src=""> -->
 <script>
@@ -26,7 +28,7 @@ layui.use(['jquery', 'layer'], function(){
 	  ,layer = layui.layer;
 	  
 	  //后面就跟你平时使用jQuery一样
-	  $('#test1').click(function(){
+	  $('.imgclick').click(function(){
 		  window.open("flower.html");
 	  });
 	});
@@ -46,9 +48,8 @@ layui.use('carousel', function(){
   //建造实例
   carousel.render({
     elem: '#test1'
-    ,width: '100%' //设置容器宽度
+    ,width:'200px'
     ,arrow: 'hover' //始终显示箭头
-    ,full:true
     ,autoplay:true
     ,interval:2000
     //,anim: 'updown' //切换动画方式
