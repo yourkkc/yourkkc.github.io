@@ -4,7 +4,7 @@ title: 'hadoop之自定义InputFormat'
 subtitle: '偏移量与自定义mapreduce的map读取方式'
 date: 2017-09-26
 categories: mapreduce
-cover: 'https://yourkkc.github.io/assets/img/source/2017-09-26-inputformat_banner'
+cover: 'https://yourkkc.github.io/assets/img/source/2017-09-26-inputformat_banner.jpg'
 tags: hadoop mapreduce 代码 KEYIN
 ---
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前几天在看mapreduce的时候，发现了map的keyin必须是LongWritable，一直觉得很新奇，网上解释说是偏移量，但是并没解释清楚，觉得有必要写个博客搞一下。   
