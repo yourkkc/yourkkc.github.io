@@ -7,11 +7,13 @@ categories: mapreduce
 cover: 'https://yourkkc.github.io/assets/img/source/2017-09-26-inputformat_banner.jpg'
 tags: hadoop mapreduce 代码 KEYIN
 ---
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;前几天在看mapreduce的时候，发现了map的keyin必须是LongWritable，一直觉得很新奇，网上解释说是偏移量，但是并没解释清楚，觉得有必要写个博客搞一下。   
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;简简单单的写了一个wordcount，打印输出keyin和valuein，结果是这样的:
 
+前几天在看mapreduce的时候，发现了map的keyin必须是LongWritable，一直觉得很新奇，网上解释说是偏移量，但是并没解释清楚，觉得有必要写个博客搞一下。
 
-    System.out.println(key.get()+","+value.toString());
+简简单单的写了一个wordcount，打印输出keyin和valuein，结果是这样的:
+
+```
+System.out.println(key.get()+","+value.toString());
     0,java
     6,eclisep
     15,java
@@ -23,14 +25,15 @@ tags: hadoop mapreduce 代码 KEYIN
     50,sfs
     55,sdfasd
     63,sdfsdd
-    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;可以发现，假如第一行的j 我们定义为索引0，那么第一行数据为  java\r\n 到了第二行的时候，e所占的索引是6，
+```
+可以发现，假如第一行的j 我们定义为索引0，那么第一行数据为  java\r\n 到了第二行的时候，e所占的索引是6，
 这里我们就发现了所谓的偏移量是每行的第一个字符所占的当前分片的索引位，通常我们的分片数据量很大的话，IntWritable不能承受，所以官方使用了LongWritable进行标记。
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;到了这里我们知道了偏移量的概念，也知道了MapReduce的map读入方式为LongWritable和Text，想必有的同学也知道有一种
-KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底层的源码是将数据通过\t进行分割，我们看一下KeyValueTextInputFormat的源码：
 
-    
-    public class KeyValueTextInputFormat extends FileInputFormat<Text, Text> {
+到了这里我们知道了偏移量的概念，也知道了MapReduce的map读入方式为LongWritable和Text，想必有的同学也知道有一种KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底层的源码是将数据通过\t进行分割，我们看一下KeyValueTextInputFormat的源码：
+
+
+```
+ public class KeyValueTextInputFormat extends FileInputFormat<Text, Text> {
     
     @Override
     protected boolean isSplitable(JobContext context, Path file) {
@@ -49,11 +52,12 @@ KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底
       return new KeyValueLineRecordReader(context.getConfiguration());
      }
     }
-    
-    
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KeyValueLineRecordReader的源码：
-    
-    //这个类继承了RecordReader 后面的泛型是map的KEYIN和VALUEIN
+```
+
+KeyValueLineRecordReader的源码：
+
+```
+//这个类继承了RecordReader 后面的泛型是map的KEYIN和VALUEIN
     public class KeyValueLineRecordReader extends RecordReader<Text, Text> {
         public static final String KEY_VALUE_SEPERATOR = 
             "mapreduce.input.keyvaluelinerecordreader.key.value.separator";
@@ -144,10 +148,12 @@ KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底
             lineRecordReader.close();
         }
     }
+```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;感觉看着很蒙，我们自己来写一个Reader来继承RecordReader看一下：
-    
-	import java.io.IOException;
+感觉看着很蒙，我们自己来写一个Reader来继承RecordReader看一下：
+
+```
+import java.io.IOException;
 	import org.apache.hadoop.io.Text;
 	import org.apache.hadoop.mapreduce.InputSplit;
 	import org.apache.hadoop.mapreduce.RecordReader;
@@ -204,11 +210,12 @@ KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底
 		}
 	
 	}
+```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;根据上面的KeyValueLineRecordReader我们模仿一下写一个以空格分割的map读入：代码如下
+根据上面的KeyValueLineRecordReader我们模仿一下写一个以空格分割的map读入：代码如下
 
-
-	import java.io.IOException;
+```
+import java.io.IOException;
 	import org.apache.hadoop.conf.Configuration;
 	import org.apache.hadoop.fs.FSDataInputStream;
 	import org.apache.hadoop.fs.FileSystem;
@@ -340,5 +347,6 @@ KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底
 		}
 	
 	}
+```
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;好了，至此自定义InputFormat就结束了。
+好了，至此自定义InputFormat就结束了。
