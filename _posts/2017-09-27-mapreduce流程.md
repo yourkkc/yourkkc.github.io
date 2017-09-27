@@ -2,7 +2,7 @@
 layout: post
 title: 'hadoop之mapreduce流程简谈'
 subtitle: 'mapreduce的流程顺序'
-date: 2017-09-26
+date: 2017-09-27
 categories: mapreduce
 cover: 'https://yourkkc.github.io/assets/img/source/2017-09-26-inputformat_banner.jpg'
 tags: hadoop mapreduce 代码
