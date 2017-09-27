@@ -45,12 +45,12 @@ job.waitForCompletion(true);
 
 如果看不懂过程的，我们接下来根据这些代码，看下面这张图
 
-![image](https://yourkkc.github.io/assets/img/source/2017-09-27-mapreduce.png)
+![image](https://yourkkc.github.io/assets/img/source/2017-09-27-mapreduce.jpg)
 
 这张解释了刚刚的job工程的流程，下面这张图解释了mapreduce的过程
 用一个简单的wordcount解释
 
-![image](https://yourkkc.github.io/assets/img/source/2017-09-27-mapreduce2.png)
+![image](https://yourkkc.github.io/assets/img/source/2017-09-27-mapreduce2.jpg)
 
 上图是一个简单的wordcount，具体的中间的shuffle以后再聊
 
