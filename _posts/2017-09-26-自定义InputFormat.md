@@ -26,7 +26,7 @@ System.out.println(key.get()+","+value.toString());
     55,sdfasd
     63,sdfsdd
 ```
-可以发现，假如第一行的j 我们定义为索引0，那么第一行数据为  java\r\n 到了第二行的时候，e所占的索引是6，
+可以发现，假如第一行的j 我们定义为索引0，那么第一行数据为  java\r\n（我们这里是在windows环境下做的测试，所以换行符是\r\n，如果是linux上传的文件，结果应该是\n） 到了第二行的时候，e所占的索引是6，
 这里我们就发现了所谓的偏移量是每行的第一个字符所占的当前分片的索引位，通常我们的分片数据量很大的话，IntWritable不能承受，所以官方使用了LongWritable进行标记。
 
 到了这里我们知道了偏移量的概念，也知道了MapReduce的map读入方式为LongWritable和Text，想必有的同学也知道有一种KeyValueTextInputFormat格式是按照键值对的模式进行读取，其实底层的源码是将数据通过\t进行分割，我们看一下KeyValueTextInputFormat的源码：
