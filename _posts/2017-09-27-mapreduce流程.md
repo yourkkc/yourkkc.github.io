@@ -55,3 +55,6 @@ job.waitForCompletion(true);
 上图是一个简单的wordcount，具体的中间的shuffle以后再聊
 
 拜拜
+---
+> 残影梦半，雨落阑珊，佳期难期人缠怨。
+> 缺月枫寒，风起渐晚，相识易逝独凭栏。————小小草
