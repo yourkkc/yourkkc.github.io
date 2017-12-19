@@ -23,7 +23,7 @@ search: true
 nightMode: false
 
 # Comments
-disqus: true
+disqus: false
 disqus_url: 'https://yourkkc.disqus.com/embed.js'
 
 # Share
