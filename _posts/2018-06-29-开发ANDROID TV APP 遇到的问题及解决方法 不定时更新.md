@@ -4,7 +4,7 @@ title: '开发ANDROID TV APP 遇到的问题及解决方法 不定时更新'
 subtitle: ''
 date: 2018-06-29
 categories: framework
-cover: 'https://yourkkc.github.io/assets/img/source/2018-06-29-开发ANDROID TV APP 遇到的问题及解决方法 不定时更新.jpg'
+cover: 'https://yourkkc.github.io/assets/img/source/2018-06-29-开发ANDROIDTVAPP遇到的问题及解决方法不定时更新.jpg'
 tags: 原创 代码 app
 ---
 
