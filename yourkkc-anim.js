@@ -2,7 +2,7 @@ var c = document.getElementById('canvas');
 var ctx = c.getContext('2d');
 var w = c.width =  window.innerWidth;
 var h = c.height = window.innerHeight;
-var mouseX ;
+var mouseX;
 var mouseY;
 
 document.onmousemove = function(e){
@@ -18,6 +18,12 @@ function anim(){
     ctx.fillRect(0,0,w,h);
     ctx.strokeStyle='white'
     tree.draw();
+    
+    if(mouseX<w){
+    	mouseX+=1
+    }else{
+    	mouseX=1;
+    }
 	requestAnimationFrame(anim);
 }
 anim();
