@@ -39,10 +39,6 @@
     					});
     				}
     			});
-    		 
-    		 $(window).click( function() {console.log('--') } );
-    		 
-    		 
     	}
     	this.init();
     };     
