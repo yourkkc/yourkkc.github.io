@@ -1,0 +1,109 @@
+html, body, #outer-container {
+	height: 100vh;
+	width: 100vw;
+	font-size:20px;
+}
+
+.img{
+	border-radius: 10px;	
+}
+
+
+.flex-row {
+	display: flex;
+	flex-direction: row;
+}
+
+.flex-col {
+	display: flex;
+	flex-direction: column;
+}
+
+.center_h {
+	align-self: center;
+	text-align: center;
+}
+
+.center_v {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.center {
+	margin: auto;
+	text-align: center;
+}
+
+.con{
+	width:100vw;height:100vh;position:relative
+}
+
+.page{
+	--padding:20px;
+	width:calc(100vw - var(--padding) - var(--padding));
+	height:calc(100vh - var(--padding) - var(--padding));
+	left:var(--padding);
+	top:var(--padding);
+	position:absolute;
+	z-index:1;
+}
+
+ .pagebg{
+ 	width:100vw;height:100vh;position:relative;
+	background-image: url("../img/bg/bg.jpg");
+}
+
+@keyframes fade-in {  
+    0% {opacity: 0;}/*初始状态 透明度为0*/  
+    40% {opacity: 0.5;}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;}/*结束状态 透明度为1*/  
+}
+
+
+@keyframes rotate-in {  
+    0% {opacity: 0;transform: rotate(0deg);}/*初始状态 透明度为0*/  
+    40% {opacity: 0.5;transform: rotate(45deg);}/*过渡状态 透明度为0*/  
+    100% {opacity: 1;transform: rotate(0deg);}/*结束状态 透明度为1*/  
+}
+
+@keyframes scale-in {  
+    0% {opacity: 0;transform: scale(0,0);}/*初始状态 透明度为0*/  
+    100% {opacity: 1;transform: scale(1,1);}/*结束状态 透明度为1*/  
+}
+
+
+@keyframes shakeA {
+        0% {
+           transform: translate(0,0)
+        }
+        25% {
+           transform: translate(0,0.1rem)
+        }
+        50% {
+         transform: translate(0,0)
+        }
+        75% {
+         transform: translate(0,-0.1rem)
+        }
+        100% {
+         transform: translate(0,0)
+        }
+      }
+.shakeAD {
+	animation: shakeA 3s ease-in-out infinite;
+}
+.fadeIn {
+	animation: fade-in 2s ease 1 forwards;
+}
+
+.rotateIn {
+	animation: rotate-in 2s ease 1 forwards;
+}
+
+.scaleIn{
+	
+	animation: scale-in 2s ease 1 forwards;
+}
+

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>可可草的相册</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="js/flexible.js"></script>
+<script type="text/javascript" src="js/swiper.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.swiper.js"></script>
+<script type="text/javascript" src="js/jquery.yhy.js"></script>
+<link rel="stylesheet" href="css/flexible.css">
+<link rel="stylesheet" href="css/swiper.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<span id="musicControl">
+        <a id="mc_play" class="on" >
+            <audio id="musicfx" loop="loop" autoplay="autoplay">
+                <source src="music/haikou.m4a" type="audio/mpeg">
+            </audio>
+        </a>
+</span>
+<script>
+    function play_music(){
+    	if($("#musicFlag").hasClass('shakeAD')){
+    		try{
+    			$('#mc_play audio').get(0).pause();
+    			$("#musicFlag").removeClass('shakeAD')
+    		}catch(e){
+    			$("#musicFlag").addClass('shakeAD')
+    		}
+    	}else{
+    		try{
+    			$('#mc_play audio').get(0).play();
+    			$("#musicFlag").addClass('shakeAD')
+    		}catch(e){
+    			$("#musicFlag").removeClass('shakeAD')
+    		}
+    	}
+    }
+    $(document).ready(function(){
+    	play_music();
+    })
+</script>
+	
+<div onclick="play_music();" style="width: 1rem; height: 1rem; position: fixed; z-index: 100; right: 0.1rem; top: 0.1rem;">
+	<img id='musicFlag' alt="" src="img/icon/music.png" style="width: 1rem; height: 1rem" />
+</div>
+
+<div id="outer-container"></div>
+
+<div id="jsi-cherry-container" style="position: fixed;left:0px;top:0px;width:100vw;height:150vh;z-index:99;pointer-events: none;"></div>
+
+<div class='flex-col' style="position:fixed;z-index:999;left:0px;bottom:0px;width:100vw;">
+	<div class='center'><img src='img/icon/down.png' style="width:1rem;" class='shakeAD'></div>
+</div>
+
+
+<script type="text/html" id='cover' data-t-duration='500'   data-t-name='slide'>
+<div class="con">
+	<img src="img/bg/cover.jpeg" style="width:100%;height:100%;position:absolute;z-index:1;left:0px;top:0px;" class="fadeIn" />
+	<div style="position:absolute;z-index:2;left:0px;top:0px;width:100%;height:100%;" class="fadeIn">
+	<img src="img/bg/cover_title1.png" style="width:80%;margin-left:10%;margin-top:10vh;"  />
+	<img src="img/bg/cover_title2.png" style="width:80%;margin-left:20%;opacity:0;animation-delay:2s;"  class="fadeIn"  />
+	<img src="img/bg/cover_title3.png" style="width:80%;margin-left:20%;opacity:0;animation-delay:4s;"  class="fadeIn"  />
+	<img src="img/bg/cover_title4.png" style="width:80%;margin-left:20%;opacity:0;animation-delay:6s;"  class="fadeIn"  />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page1' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3592.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page2' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3584.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img3599.jpg" style="width:100%;" class="rotateIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page3' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3581.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page4' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3585.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+
+<script type="text/html" id='page5' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3587.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+
+<script type="text/html" id='page6' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3600.jpg" style="width:100%;" class="rotateIn center img" />
+		<img src="img/imgs/img3623.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page7' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3590.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+
+<script type="text/html" id='page8' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3596.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+
+<script type="text/html" id='page9' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3602.jpg" style="width:100%;" class="rotateIn center img" />
+	</div>
+</div>
+</script>
+
+
+<script type="text/html" id='page10' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3665.jpg" style="width:100%;" class="scaleIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page11' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3655.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img3659.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page12' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3644.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page13' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3670.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+
+<script type="text/html" id='page14' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3677.jpg" style="width:100%;" class="scaleIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page15' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3680.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page16' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3736.jpg" style="width:100%;" class="rotateIn center img" />
+		<img src="img/imgs/img3691.jpg" style="width:100%;" class="rotateIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page17' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3741.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img3782.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page18' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3934.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page19' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3915.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img3917.jpg" style="width:100%;" class="scaleIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page20' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3944.jpg" style="width:100%;" class="rotateIn center img" />
+		<img src="img/imgs/img3946.jpg" style="width:100%;" class="scaleIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page21' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3980.jpg" style="width:100%;" class="scaleIn center img" />
+		<img src="img/imgs/img3982.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page22' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3985.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page23' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3995.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page24' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img3931.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img4008.jpg" style="width:100%;" class="scaleIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page25' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4021.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page26' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4036.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page27' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4136.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page28' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4150.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img4197.jpg" style="width:100%;" class="scaleIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page29' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4228.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page30' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4250.jpg" style="width:100%;" class="fadeIn center img" />
+		<img src="img/imgs/img4274.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page31' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4268.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page32' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4317.jpg" style="width:100%;" class="rotateIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page33' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4318.jpg" style="width:100%;" class="scaleIn center img" />
+		<img src="img/imgs/img4339.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+<script type="text/html" id='page34' data-t-duration='500'   data-t-name='random'>
+<div class="pagebg">
+	<div class="page flex-col">
+		<img src="img/imgs/img4351.jpg" style="width:100%;" class="fadeIn center img" />
+	</div>
+</div>
+</script>
+	<!-- 
+{
+    // 过渡动画名称，目前提供了 5 种过渡动画
+    name: 'slide' | 'rotate' | 'flip' | 'card' | 'fade'
+    // 过渡动画时长，单位为 ms
+    duration: Number
+    // 只允许滑动方向 1: 后向，-1: 前向，0:双向禁止滑动，默认为 undefined，即不限制任何方向的滑动
+    direction: 1 | -1 | 0
+    
+    
+    data-t-name
+    data-t-duration
+    data-t-direction
+}
+ -->
+	<script>
+		$("#outer-container").swiper({
+			pagesId:["cover","page1","page2","page3","page4","page5"
+				,"page6","page7","page8","page9","page10"
+				,"page11","page12","page13","page14","page15"
+				,"page16","page17","page18","page19","page20"
+				,"page21","page22","page23","page24","page25"
+				,"page26","page27","page28","page29","page30"
+				,"page31","page32","page33","page34"]		
+		});
+	</script>
+</body>
+</html>
