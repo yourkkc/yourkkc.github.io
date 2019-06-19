@@ -30,7 +30,16 @@
     				container : this[0],
     				data : this.list,
     				isLoop : true,
+    				comCallBack:function(){
+    					$(".current div div img").each(function(i){
+    						$(this).attr("src",$(this).attr("datasrc"))
+    					});
+    				}
     			});
+    		 
+    		 $(window).click( function() {console.log('--') } );
+    		 
+    		 
     	}
     	this.init();
     };     
