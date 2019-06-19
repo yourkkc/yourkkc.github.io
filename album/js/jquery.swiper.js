@@ -34,6 +34,9 @@
     					$(".current div div img").each(function(i){
     						$(this).attr("src",$(this).attr("datasrc"))
     					});
+    					$(".current").next().children('div').children('div').children('img').each(function(i){
+    						$(this).attr("src",$(this).attr("datasrc"))
+    					});
     				}
     			});
     		 
