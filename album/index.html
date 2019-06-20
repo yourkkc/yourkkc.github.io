@@ -18,38 +18,37 @@
 <body class='flex-col'>
 
 <div id='bodydiv' class='center' style="position:relative">
-
-<span id="musicControl">
-        <a id="mc_play" class="on" >
-            <audio id="musicfx" loop="loop" autoplay="autoplay">
-                <source src="music/haikou.m4a" type="audio/mpeg">
-            </audio>
-        </a>
-</span>
+ <audio id="musicfx" loop="loop" autoplay="autoplay" >
+    <source src="music/haikou.m4a" type="audio/mpeg">
+ </audio>
 <script>
-    function play_music(){
-    	if($("#musicFlag").hasClass('shakeAD')){
-    		try{
-    			$('#mc_play audio').get(0).pause();
-    			$("#musicFlag").removeClass('shakeAD')
-    		}catch(e){
-    			$("#musicFlag").addClass('shakeAD')
-    		}
-    	}else{
-    		try{
-    			$('#mc_play audio').get(0).play();
-    			$("#musicFlag").addClass('shakeAD')
-    		}catch(e){
-    			$("#musicFlag").removeClass('shakeAD')
-    		}
-    	}
-    }
-    $(document).ready(function(){
-    	play_music();
-    })
+	$(document).ready(function(){
+		$('#musicfx').bind('pause', function(){
+			$("#musicFlag").removeClass('shakeAD')
+		})
+		$('#musicfx').bind('play', function(){
+			$("#musicFlag").addClass('shakeAD')
+		})
+		
+		$('#play_music').click(function(event){
+		    	var music = $('#musicfx').get(0);
+		    	if(music.paused){
+		    		music.play();
+		    	}else{
+		    		music.pause();
+		    	}
+		    	 event.stopPropagation();
+		 })
+		 $(document).click(function(){
+			 var music = $('#musicfx').get(0);
+		    	if(music.paused){
+		    		music.play();
+		    	}
+		 })
+	})
 </script>
 	
-<div onclick="play_music();" style="width: 1rem; height: 1rem; position: absolute; z-index: 100; right: 0.1rem; top: 0.1rem;">
+<div id='play_music' style="width: 1rem; height: 1rem; position: absolute; z-index: 100; right: 0.1rem; top: 0.1rem;">
 	<img id='musicFlag' alt="" src="img/icon/music.png" style="width: 1rem; height: 1rem" />
 </div>
 
@@ -377,7 +376,7 @@
 		if(width<height){
 			$("#bodydiv").css('width','100vw');
 		}else{
-			$('body').css("background","url('img/bg/pcbg.jpg') no-repeat")
+			$('body').css("background","url('img/bg/timg.jpg') no-repeat")
 			$("#bodydiv").css('width',(1080*height/1980)+'px');
 		}
 	</script>
