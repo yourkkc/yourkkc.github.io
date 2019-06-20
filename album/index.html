@@ -45,6 +45,12 @@
 		    		music.play();
 		    	}
 		 })
+		 $(document).on("touchstart", function(e) {
+			 var music = $('#musicfx').get(0);
+		    	if(music.paused){
+		    		music.play();
+		    	}
+		});
 	})
 </script>
 	
