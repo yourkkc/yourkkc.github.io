@@ -22,6 +22,7 @@
     <source src="music/haikou.m4a" type="audio/mpeg">
  </audio>
 <script>
+	var pauseMusic = false;
 	$(document).ready(function(){
 		$('#musicfx').bind('pause', function(){
 			$("#musicFlag").removeClass('shakeAD')
@@ -33,21 +34,23 @@
 		$('#play_music').click(function(event){
 		    	var music = $('#musicfx').get(0);
 		    	if(music.paused){
+		    		pauseMusic = false;
 		    		music.play();
 		    	}else{
+		    		pauseMusic = true;
 		    		music.pause();
 		    	}
 		    	 event.stopPropagation();
 		 })
 		 $(document).click(function(){
 			 var music = $('#musicfx').get(0);
-		    	if(music.paused){
+		    	if(music.paused&&!pauseMusic){
 		    		music.play();
 		    	}
 		 })
 		 $(document).on("touchstart", function(e) {
 			 var music = $('#musicfx').get(0);
-		    	if(music.paused){
+			 	if(music.paused&&!pauseMusic){
 		    		music.play();
 		    	}
 		});
