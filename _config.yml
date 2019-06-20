@@ -2,8 +2,8 @@
 title: '小小草的小小窝'
 description: '大数据技术交流中心'
 keyword: 'hadoop 大数据 小小草 何汇玉 IT java 诗词 博客 CSDN'
-url: 'http://yourkkc.top' # your host
-baseurl: 'http://yourkkc.top/'
+url: 'https://yourkkc.top' # your host
+baseurl: 'https://yourkkc.top/'
 
 # Navigation links
 nav:
